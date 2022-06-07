@@ -1,0 +1,8 @@
+.base {
+    background-color: red;
+    width: 1000px;
+    height:1000px;
+    padding:50px;
+    border: 5px solid rebeccapurple;
+    margin: 10px;
+}

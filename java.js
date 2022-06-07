@@ -5,3 +5,14 @@ for (i =0; i < 256;i++){
     div.classList.add("grid")
     base.appendChild(div)
 }
+
+const grid = document.querySelectorAll(".grid")
+grid.forEach((square) => {
+    square.addEventListener("mouseover", () => {
+        colourChange()
+});
+});
+
+colourChange = function(){
+    
+}

@@ -6,3 +6,9 @@
     border: 5px solid rebeccapurple;
     margin: 10px;
 }
+
+.grid {
+    background-color: green;
+    width: 500px;
+    height: 500px;
+}

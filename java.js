@@ -16,3 +16,6 @@ grid.forEach((square) => {
         })
     });
 });
+
+const button = document.querySelector(".button")
+button.onclick = () => gridSize = prompt("What size grid would you like? ") 

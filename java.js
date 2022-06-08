@@ -21,8 +21,8 @@ drawGrid = function(gridSize){
 }
 
 removeGrid = function(){
-    const base = document.querySelectorAll(".base")
-    base.forEach((one) => {
+    const grid = document.querySelectorAll(".grid")
+    grid.forEach((one) => {
         one.remove()
     })    
 }   
@@ -33,5 +33,7 @@ drawGrid(gridSize)
 const button = document.querySelector(".button")
 button.addEventListener ("click", () => {
     gridSize = prompt("What size grid would you like? ");
-    drawGrid(gridSize)
+    removeGrid()
+    alert(gridSize)
+    
 });

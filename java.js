@@ -1,6 +1,8 @@
 const base = document.querySelector(".base")
+let gridSize = 256
 
-for (i =0; i < 256;i++){
+
+for (i =0; i < gridSize;i++){
     const div = document.createElement("div");
     div.classList.add("grid")
     base.appendChild(div)

@@ -24,3 +24,11 @@
     align-self: center;
 }
 
+
+.box {
+    display: flex;
+
+}
+.button {
+    padding: 10px;
+}

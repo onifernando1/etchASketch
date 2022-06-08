@@ -20,7 +20,15 @@ drawGrid = function(gridSize){
     });
 }
 
+removeGrid = function(){
+    const base = document.querySelectorAll(".base")
+    base.forEach((one) => {
+        one.remove()
+    })    
+}   
+
 drawGrid(gridSize)
+
 
 const button = document.querySelector(".button")
 button.addEventListener ("click", () => {

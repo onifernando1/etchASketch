@@ -1,7 +1,7 @@
 const base = document.querySelector(".base")
 let gridSize = 256
 
-drawGrid = function(){
+drawGrid = function(gridSize){
     for (i =0; i < gridSize;i++){
         const div = document.createElement("div");
         div.classList.add("grid")
@@ -20,6 +20,10 @@ drawGrid = function(){
     });
 }
 
-drawGrid()
+drawGrid(gridSize)
+
 const button = document.querySelector(".button")
-button.onclick = () => gridSize = prompt("What size grid would you like? ");
+button.addEventListener ("click", () => {
+    gridSize = prompt("What size grid would you like? ");
+    drawGrid(gridSize)
+});

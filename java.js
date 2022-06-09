@@ -7,8 +7,11 @@ drawGrid = function(gridSize){
         div.classList.add("grid")
         base.appendChild(div)
     }
+}
+ 
+colourChange = function() {
 
-    const grid = document.querySelectorAll(".grid")
+const grid = document.querySelectorAll(".grid")
     grid.forEach((square) => {
         square.addEventListener("mouseover", () => {
             square.classList.add("change")
@@ -20,6 +23,7 @@ drawGrid = function(gridSize){
     });
 }
 
+
 removeGrid = function(){
     const grid = document.querySelectorAll(".grid")
     grid.forEach((one) => {
@@ -28,6 +32,7 @@ removeGrid = function(){
 }   
 
 drawGrid(gridSize)
+colourChange()
 
 changeGrid = function() {
     const base = document.querySelector(".base")
@@ -38,8 +43,8 @@ changeGrid = function() {
 
 // changeSize = function() {
 //     const grid = document.querySelector(".grid")
-//     grid.style.height = "90px"
-//     grid.style.width = "90px"
+//     grid.style.height = `${gridSize*4}px`
+//     grid.style.width = `${gridSize*4}px`
     
 // }
 

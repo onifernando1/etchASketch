@@ -15,37 +15,67 @@ drawGrid = function(gridSize){
     }
 }
 
+// randomColour = function() {
+//     let a = Math.floor(Math.random() * 256)
+//     let b = Math.floor(Math.random() * 256)
+//     let c = Math.floor(Math.random() * 256)
+//     randomColour = `rgb(${a},${b},${c})`
+//     return randomColour
+// }
 
  
+// colourChange = function() {
+
+// const grid = document.querySelectorAll(".grid")
+//     grid.forEach((square) => {
+//         square.addEventListener("mouseover", () => {
+//             square.classList.add("change")
+//             const change = document.querySelectorAll(".change")
+//             change.forEach((initialSquare) => {
+//                 if (standardSwitch === true && psychedelicSwitch === false) {
+//                     initialSquare.setAttribute("style", "background:black;")
+//                 } else if (psychedelicSwitch === true && standardSwitch === false) {
+//                     square.addEventListener("mouseover", () => {
+//                         let a = Math.floor(Math.random() * 256)
+//                         let b = Math.floor(Math.random() * 256)
+//                         let c = Math.floor(Math.random() * 256)
+//                         randomColour = `rgb(${a},${b},${c})`
+//                         square.classList.add("change")
+//                         const change = document.querySelectorAll(".change")
+//                         change.forEach((initialSquare) => {
+//                             initialSquare.setAttribute("style", `background: ${randomColour};`)
+//                         })
+//                 })
+                
+//             }
+//         });
+//     });
+// })
+// }
+
 colourChange = function() {
 
-const grid = document.querySelectorAll(".grid")
-    grid.forEach((square) => {
-        square.addEventListener("mouseover", () => {
-            square.classList.add("change")
-            const change = document.querySelectorAll(".change")
-            change.forEach((initialSquare) => {
-                if (standardSwitch === true && psychedelicSwitch === false) {
-                    initialSquare.setAttribute("style", "background:black;")
-                } else if (psychedelicSwitch === true && standardSwitch === false) {
-                    square.addEventListener("mouseover", () => {
-                        let a = Math.floor(Math.random() * 256)
-                        let b = Math.floor(Math.random() * 256)
-                        let c = Math.floor(Math.random() * 256)
-                        randomColour = `rgb(${a},${b},${c})`
-                        square.classList.add("change")
-                        const change = document.querySelectorAll(".change")
-                        change.forEach((initialSquare) => {
+    const grid = document.querySelectorAll(".grid")
+        grid.forEach((square) => {
+            square.addEventListener("mouseover", () => {
+                square.classList.add("change")
+                const change = document.querySelectorAll(".change")
+                change.forEach((initialSquare) => {
+                    if (standardSwitch === true && psychedelicSwitch === false) {
+                        initialSquare.setAttribute("style", "background:black;")
+                    } else if (psychedelicSwitch === true && standardSwitch === false) {
+                            // let a = Math.floor(Math.random() * 256)
+                            // let b = Math.floor(Math.random() * 256)
+                            // let c = Math.floor(Math.random() * 256)
+                            // randomColour = `rgb(${a},${b},${c})`
                             initialSquare.setAttribute("style", `background: ${randomColour};`)
-                        })
-                })
-                
-            }
-        });
-    });
-})
+                            }
+                    })
+                    
+            });
+        })
 }
-
+    
 
 
 resetGrid = function() {
@@ -97,6 +127,10 @@ const psychedelic = document.querySelector(".psychedelic")
 psychedelic.addEventListener("click", () =>{
     standardSwitch = false 
     psychedelicSwitch = true
+    let a = Math.floor(Math.random() * 256)
+    let b = Math.floor(Math.random() * 256)
+    let c = Math.floor(Math.random() * 256)
+    randomColour = `rgb(${a},${b},${c})`
 })
 
 const clear = document.querySelector(".clear")
@@ -108,13 +142,6 @@ clear.addEventListener ("click", () => {
 colourChange()
 
 
-// randomColour = function() {
-//     let a = Math.floor(Math.random() * 256)
-//     let b = Math.floor(Math.random() * 256)
-//     let c = Math.floor(Math.random() * 256)
-//     randomColour = `rgb(${a},${b},${c})`
-//     return randomColour
-// }
 
 
 

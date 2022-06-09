@@ -1,6 +1,7 @@
 const base = document.querySelector(".base")
 let gridSize = 256 
 let size = 16
+let randomColour = 0
 
 drawGrid = function(gridSize){
     removeGrid()
@@ -11,18 +12,39 @@ drawGrid = function(gridSize){
     }
 }
  
-colourChange = function() {
+// colourChange = function() {
 
-const grid = document.querySelectorAll(".grid")
+// const grid = document.querySelectorAll(".grid")
+//     grid.forEach((square) => {
+//         square.addEventListener("mouseover", () => {
+//             square.classList.add("change")
+//             const change = document.querySelectorAll(".change")
+//             change.forEach((initialSquare) => {
+//                 initialSquare.setAttribute("style", "background:black;")
+//             })
+//         });
+//     });
+// }
+
+rainbowColourChange = function(){
+    const grid = document.querySelectorAll(".grid")
+    randomColour()
     grid.forEach((square) => {
         square.addEventListener("mouseover", () => {
             square.classList.add("change")
             const change = document.querySelectorAll(".change")
             change.forEach((initialSquare) => {
-                initialSquare.setAttribute("style", "background:black;")
+                initialSquare.setAttribute("style", `background: ${randomColour};`)
             })
         });
     });
+}
+
+randomColour = function(){
+    let a = Math.floor(Math.random() * 256)
+    let b = Math.floor(Math.random() * 256)
+    let c = Math.floor(Math.random() * 256)
+    randomColour = `rgb(${a},${b},${c})`
 }
 
 
@@ -34,7 +56,8 @@ removeGrid = function(){
 }   
 
 drawGrid(gridSize)
-colourChange()
+// colourChange()
+rainbowColourChange()
 
 changeGrid = function(newSize) {
     const base = document.querySelector(".base")
@@ -53,5 +76,6 @@ button.addEventListener ("click", () => {
     gridSize = size*size 
     drawGrid(gridSize)
     changeGrid(size)
-    colourChange()
+    // colourChange()
+    rainbowColourChange()
 });

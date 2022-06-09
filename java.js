@@ -57,15 +57,13 @@ removeGrid = function(){
     })    
 }   
 
-drawGrid(gridSize)
-// colourChange()
-rainbowColourChange()
-
 changeGrid = function(newSize) {
     const base = document.querySelector(".base")
     base.style.gridTemplateColumns = `repeat(${newSize}, auto)`
     base.style.gridTemplateRows = `repeat(${newSize}, auto)`
 }
+
+drawGrid(gridSize)
 
 
 const button = document.querySelector(".button")
@@ -79,7 +77,7 @@ button.addEventListener ("click", () => {
     drawGrid(gridSize)
     changeGrid(size)
     // colourChange()
-    rainbowColourChange()
+    // rainbowColourChange()
 });
 
 
@@ -93,8 +91,9 @@ psychedelic.addEventListener("click", () =>{
     mode = "psychedelic"
 })
 
-if (mode == "standard") {
+if (mode == "psychedelic") {
     colourChange()
-} else {
-    mode == "psychedelic"
+} else if (mode == "standard") { 
+    rainbowColourChange()
 }
+

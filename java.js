@@ -4,6 +4,7 @@ let size = 16
 let randomColour = 0
 let mode = "standard"
 
+
 drawGrid = function(gridSize){
     removeGrid()
     for (i =0; i < gridSize;i++){
@@ -12,6 +13,8 @@ drawGrid = function(gridSize){
         base.appendChild(div)
     }
 }
+
+
  
 colourChange = function() {
 
@@ -27,26 +30,8 @@ const grid = document.querySelectorAll(".grid")
     });
 }
 
-randomColour = function(){
-    let a = Math.floor(Math.random() * 256)
-    let b = Math.floor(Math.random() * 256)
-    let c = Math.floor(Math.random() * 256)
-    randomColour = `rgb(${a},${b},${c})`
-}
 
-rainbowColourChange = function(){
-    const grid = document.querySelectorAll(".grid")
-    randomColour()
-    grid.forEach((square) => {
-        square.addEventListener("mouseover", () => {
-            square.classList.add("change")
-            const change = document.querySelectorAll(".change")
-            change.forEach((initialSquare) => {
-                initialSquare.setAttribute("style", `background: ${randomColour};`)
-            })
-        });
-    });
-}
+
 
 resetGrid = function() {
     const grid = document.querySelectorAll(".grid")
@@ -82,8 +67,8 @@ button.addEventListener ("click", () => {
     gridSize = size*size 
     drawGrid(gridSize)
     changeGrid(size)
-    // colourChange()
-    // rainbowColourChange()
+    colourChange()
+    rainbowColourChange()
 });
 
 
@@ -102,9 +87,41 @@ clear.addEventListener ("click", () => {
     resetGrid()
 })
 
-if (mode == "psychedelic") {
-    colourChange()
-} else if (mode == "standard") { 
-    rainbowColourChange()
+
+// colourChange()
+/////////////////
+
+
+// randomColour = function() {
+//     let a = Math.floor(Math.random() * 256)
+//     let b = Math.floor(Math.random() * 256)
+//     let c = Math.floor(Math.random() * 256)
+//     randomColour = `rgb(${a},${b},${c})`
+//     return randomColour
+// }
+
+
+
+rainbowColourChange = function(){
+    const grid = document.querySelectorAll(".grid")
+    grid.forEach((square) => {
+        square.addEventListener("mouseover", () => {
+            let a = Math.floor(Math.random() * 256)
+            let b = Math.floor(Math.random() * 256)
+            let c = Math.floor(Math.random() * 256)
+            randomColour = `rgb(${a},${b},${c})`
+            square.classList.add("change")
+            const change = document.querySelectorAll(".change")
+            change.forEach((initialSquare) => {
+                initialSquare.setAttribute("style", `background: ${randomColour};`)
+            })
+        });
+    });
 }
 
+
+if (mode =="standard"){
+colourChange()
+}  else if (mode =="psychedlic") {
+    rainbowColourChange()
+}

@@ -32,14 +32,16 @@ drawGrid(gridSize)
 changeGrid = function() {
     const base = document.querySelector(".base")
     base.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    base.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+
 }
 
-changeSize = function() {
-    const grid = document.querySelector(".grid")
-    grid.style.height = "90px"
-    grid.style.width = "90px"
+// changeSize = function() {
+//     const grid = document.querySelector(".grid")
+//     grid.style.height = "90px"
+//     grid.style.width = "90px"
     
-}
+// }
 
 const button = document.querySelector(".button")
 button.addEventListener ("click", () => {
@@ -47,5 +49,5 @@ button.addEventListener ("click", () => {
     removeGrid()
     drawGrid(gridSize*gridSize)
     changeGrid()
-    changeSize()
+    // changeSize()
 });

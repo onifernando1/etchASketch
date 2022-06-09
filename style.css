@@ -36,8 +36,10 @@
     justify-content: center;
 
 }
-.button {
+button {
     padding: 10px;
     font-size:50px;
     border: 2px solid;
+    margin: 10px;
 }
+

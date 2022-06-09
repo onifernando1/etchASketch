@@ -5,7 +5,7 @@ let randomColour = 0
 let standardSwitch = true;
 let psychedelicSwitch = false;
 
-
+// Draw the main grid
 drawGrid = function(gridSize){
     removeGrid()
     for (i =0; i < gridSize;i++){
@@ -15,44 +15,7 @@ drawGrid = function(gridSize){
     }
 }
 
-// randomColour = function() {
-//     let a = Math.floor(Math.random() * 256)
-//     let b = Math.floor(Math.random() * 256)
-//     let c = Math.floor(Math.random() * 256)
-//     randomColour = `rgb(${a},${b},${c})`
-//     return randomColour
-// }
-
- 
-// colourChange = function() {
-
-// const grid = document.querySelectorAll(".grid")
-//     grid.forEach((square) => {
-//         square.addEventListener("mouseover", () => {
-//             square.classList.add("change")
-//             const change = document.querySelectorAll(".change")
-//             change.forEach((initialSquare) => {
-//                 if (standardSwitch === true && psychedelicSwitch === false) {
-//                     initialSquare.setAttribute("style", "background:black;")
-//                 } else if (psychedelicSwitch === true && standardSwitch === false) {
-//                     square.addEventListener("mouseover", () => {
-//                         let a = Math.floor(Math.random() * 256)
-//                         let b = Math.floor(Math.random() * 256)
-//                         let c = Math.floor(Math.random() * 256)
-//                         randomColour = `rgb(${a},${b},${c})`
-//                         square.classList.add("change")
-//                         const change = document.querySelectorAll(".change")
-//                         change.forEach((initialSquare) => {
-//                             initialSquare.setAttribute("style", `background: ${randomColour};`)
-//                         })
-//                 })
-                
-//             }
-//         });
-//     });
-// })
-// }
-
+// Change colour in response to the mouse
 colourChange = function() {
 
     const grid = document.querySelectorAll(".grid")
@@ -64,10 +27,10 @@ colourChange = function() {
                     if (standardSwitch === true && psychedelicSwitch === false) {
                         initialSquare.setAttribute("style", "background:black;")
                     } else if (psychedelicSwitch === true && standardSwitch === false) {
-                            // let a = Math.floor(Math.random() * 256)
-                            // let b = Math.floor(Math.random() * 256)
-                            // let c = Math.floor(Math.random() * 256)
-                            // randomColour = `rgb(${a},${b},${c})`
+                            let a = Math.floor(Math.random() * 256)
+                            let b = Math.floor(Math.random() * 256)
+                            let c = Math.floor(Math.random() * 256)
+                            randomColour = `rgb(${a},${b},${c})`
                             initialSquare.setAttribute("style", `background: ${randomColour};`)
                             }
                     })
@@ -77,7 +40,7 @@ colourChange = function() {
 }
     
 
-
+//Erase the board
 resetGrid = function() {
     const grid = document.querySelectorAll(".grid")
     grid.forEach((square) =>{
@@ -93,6 +56,7 @@ removeGrid = function(){
     })    
 }   
 
+//Change the grid size to a new size
 changeGrid = function(newSize) {
     const base = document.querySelector(".base")
     base.style.gridTemplateColumns = `repeat(${newSize}, auto)`
@@ -101,7 +65,7 @@ changeGrid = function(newSize) {
 
 drawGrid(gridSize)
 
-
+// Limit grid size to less than 100
 const button = document.querySelector(".button")
 button.addEventListener ("click", () => {
     size = parseInt(prompt("What size grid would you like? "));
@@ -116,7 +80,7 @@ button.addEventListener ("click", () => {
     rainbowColourChange()
 });
 
-
+//Buttons
 const standard = document.querySelector(".standard")
 standard.addEventListener ("click", () => {
     standardSwitch = true 
@@ -127,10 +91,6 @@ const psychedelic = document.querySelector(".psychedelic")
 psychedelic.addEventListener("click", () =>{
     standardSwitch = false 
     psychedelicSwitch = true
-    let a = Math.floor(Math.random() * 256)
-    let b = Math.floor(Math.random() * 256)
-    let c = Math.floor(Math.random() * 256)
-    randomColour = `rgb(${a},${b},${c})`
 })
 
 const clear = document.querySelector(".clear")
@@ -140,24 +100,3 @@ clear.addEventListener ("click", () => {
 
 
 colourChange()
-
-
-
-
-
-// rainbowColourChange = function(){
-//     const grid = document.querySelectorAll(".grid")
-//     grid.forEach((square) => {
-//         square.addEventListener("mouseover", () => {
-//             let a = Math.floor(Math.random() * 256)
-//             let b = Math.floor(Math.random() * 256)
-//             let c = Math.floor(Math.random() * 256)
-//             randomColour = `rgb(${a},${b},${c})`
-//             square.classList.add("change")
-//             const change = document.querySelectorAll(".change")
-//             change.forEach((initialSquare) => {
-//                 initialSquare.setAttribute("style", `background: ${randomColour};`)
-//             })
-//         });
-//     });
-// }

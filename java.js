@@ -1,6 +1,7 @@
 const base = document.querySelector(".base")
 let gridSize = 256
 let size = 16
+let gridWidth = base.offsetWidth / size;
 
 drawGrid = function(gridSize){
     for (i =0; i < gridSize;i++){
@@ -37,9 +38,8 @@ colourChange()
 
 changeGrid = function() {
     const base = document.querySelector(".base")
-    base.style.gridTemplateColumns = `repeat(${size}, 1fr, 1fr)`;
-    base.style.gridTemplateColumns = `repeat(${size}, 1fr, 1fr)`;
-
+    base.style.gridTemplateColumns = `repeat(${size},  1fr, 1fr)`;
+    base.style.gridTemplateRows = `repeat(${size}, 1fr, 1fr)`;
 }
 
 changeSize = function() {
@@ -57,5 +57,6 @@ button.addEventListener ("click", () => {
     drawGrid(gridSize)
     changeGrid()
     colourChange()
-});
+    console.log(gridWidth)
 
+});

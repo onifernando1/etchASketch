@@ -17,8 +17,8 @@
     grid-template-rows: repeat(16, 1fr);
     /* column-gap: 5px;
     row-gap: 5px; */
-    justify-content: center;
-    align-content: center;
+    /* justify-content: center; */
+    /* align-content: center; */
 }
 
 .grid {
@@ -28,7 +28,7 @@
     margin: 0px;
     display: grid;
     justify-self: center;
-    align-self: center;
+    /* align-self: center; */
 }
 
 

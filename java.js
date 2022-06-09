@@ -48,6 +48,16 @@ rainbowColourChange = function(){
     });
 }
 
+clearGrid = function() {
+    const grid = document.querySelectorAll(".grid")
+    grid.forEach((square) => {
+            square.classList.add("white")
+            const white = document.querySelectorAll(".white")
+            white.forEach((initialSquare) => {
+                initialSquare.setAttribute("style", `background: white;`)
+            })
+        });
+    }
 
 
 removeGrid = function(){
@@ -89,6 +99,11 @@ standard.addEventListener ("click", () => {
 const psychedelic = document.querySelector(".psychedelic")
 psychedelic.addEventListener("click", () =>{
     mode = "psychedelic"
+})
+
+const clear = document.querySelector(".clear")
+clear.addEventListener ("click", () => {
+    clearGrid()
 })
 
 if (mode == "psychedelic") {

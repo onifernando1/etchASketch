@@ -1,9 +1,9 @@
 const base = document.querySelector(".base")
-let gridSize = 256
+let gridSize = 256 
 let size = 16
-let gridWidth = base.offsetWidth / size;
 
 drawGrid = function(gridSize){
+    removeGrid()
     for (i =0; i < gridSize;i++){
         const div = document.createElement("div");
         div.classList.add("grid")
@@ -36,27 +36,26 @@ removeGrid = function(){
 drawGrid(gridSize)
 colourChange()
 
-changeGrid = function() {
+changeGrid = function(newSize) {
     const base = document.querySelector(".base")
-    base.style.gridTemplateColumns = `repeat(${size},  1fr, 1fr)`;
-    base.style.gridTemplateRows = `repeat(${size}, 1fr, 1fr)`;
+    base.style.gridTemplateColumns = `repeat(${newSize}, auto;`
+    base.style.gridTemplateRows = `repeat(${newSize}, auto;`
 }
 
-changeSize = function() {
-    const grid = document.querySelector(".grid")
-    grid.style.height = `${100/gridSize}%`
-    grid.style.width = `${100/gridSize}%`
+// changeSize = function() {
+//     const grid = document.querySelector(".grid")
+//     grid.style.height = "fit-content"
+//     grid.style.width = "fit-content"
     
-}
+    
+// }
 
 const button = document.querySelector(".button")
 button.addEventListener ("click", () => {
     size = parseInt(prompt("What size grid would you like? "));
     gridSize = size*size 
-    removeGrid()
     drawGrid(gridSize)
-    changeGrid()
+    changeGrid(size)
+    // changeSize()
     colourChange()
-    console.log(gridWidth)
-
 });

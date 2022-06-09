@@ -38,17 +38,10 @@ colourChange()
 
 changeGrid = function(newSize) {
     const base = document.querySelector(".base")
-    base.style.gridTemplateColumns = `repeat(${newSize}, auto;`
-    base.style.gridTemplateRows = `repeat(${newSize}, auto;`
+    base.style.gridTemplateColumns = `repeat(${newSize}, auto)`
+    base.style.gridTemplateRows = `repeat(${newSize}, auto)`
 }
 
-// changeSize = function() {
-//     const grid = document.querySelector(".grid")
-//     grid.style.height = "fit-content"
-//     grid.style.width = "fit-content"
-    
-    
-// }
 
 const button = document.querySelector(".button")
 button.addEventListener ("click", () => {
@@ -56,6 +49,5 @@ button.addEventListener ("click", () => {
     gridSize = size*size 
     drawGrid(gridSize)
     changeGrid(size)
-    // changeSize()
     colourChange()
 });

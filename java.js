@@ -86,3 +86,9 @@ const standard = document.querySelector(".standard")
 standard.addEventListener ("click", () => {
     alert("Standard")
 })
+
+const psychedelic = document.querySelector(".psychedelic")
+psychedelic.addEventListener("click", () =>{
+    alert("Psychedelic")
+}
+)

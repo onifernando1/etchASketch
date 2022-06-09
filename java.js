@@ -2,6 +2,7 @@ const base = document.querySelector(".base")
 let gridSize = 256 
 let size = 16
 let randomColour = 0
+let mode = "standard"
 
 drawGrid = function(gridSize){
     removeGrid()

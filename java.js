@@ -50,9 +50,10 @@ changeGrid = function() {
 
 const button = document.querySelector(".button")
 button.addEventListener ("click", () => {
-    gridSize = parseInt(prompt("What size grid would you like? "));
+    let size = parseInt(prompt("What size grid would you like? "));
+    gridSize = size*size 
     removeGrid()
-    drawGrid(gridSize*gridSize)
+    drawGrid(gridSize)
     changeGrid()
     // changeSize()
 });

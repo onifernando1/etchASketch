@@ -80,3 +80,9 @@ button.addEventListener ("click", () => {
     // colourChange()
     rainbowColourChange()
 });
+
+
+const standard = document.querySelector(".standard")
+standard.addEventListener ("click", () => {
+    alert("Standard")
+})

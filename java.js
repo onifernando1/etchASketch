@@ -1,5 +1,6 @@
 const base = document.querySelector(".base")
 let gridSize = 256
+let size = 16
 
 drawGrid = function(gridSize){
     for (i =0; i < gridSize;i++){
@@ -36,8 +37,8 @@ colourChange()
 
 changeGrid = function() {
     const base = document.querySelector(".base")
-    base.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-    base.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    base.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    base.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 
 }
 
@@ -50,10 +51,11 @@ changeGrid = function() {
 
 const button = document.querySelector(".button")
 button.addEventListener ("click", () => {
-    let size = parseInt(prompt("What size grid would you like? "));
+    size = parseInt(prompt("What size grid would you like? "));
     gridSize = size*size 
     removeGrid()
     drawGrid(gridSize)
     changeGrid()
-    // changeSize()
+    colourChange()
 });
+

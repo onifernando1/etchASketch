@@ -29,11 +29,23 @@ removeGrid = function(){
 
 drawGrid(gridSize)
 
+changeGrid = function() {
+    const base = document.querySelector(".base")
+    base.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+}
+
+changeSize = function() {
+    const grid = document.querySelector(".grid")
+    grid.style.height = "90px"
+    grid.style.width = "90px"
+    
+}
 
 const button = document.querySelector(".button")
 button.addEventListener ("click", () => {
-    gridSize = prompt("What size grid would you like? ");
+    gridSize = parseInt(prompt("What size grid would you like? "));
     removeGrid()
-    alert(gridSize)
-    
+    drawGrid(gridSize*gridSize)
+    changeGrid()
+    changeSize()
 });

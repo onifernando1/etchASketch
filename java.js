@@ -37,17 +37,17 @@ colourChange()
 
 changeGrid = function() {
     const base = document.querySelector(".base")
-    base.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-    base.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    base.style.gridTemplateColumns = `repeat(${size}, 1fr, 1fr)`;
+    base.style.gridTemplateColumns = `repeat(${size}, 1fr, 1fr)`;
 
 }
 
-// changeSize = function() {
-//     const grid = document.querySelector(".grid")
-//     grid.style.height = `${gridSize*4}px`
-//     grid.style.width = `${gridSize*4}px`
+changeSize = function() {
+    const grid = document.querySelector(".grid")
+    grid.style.height = `${100/gridSize}%`
+    grid.style.width = `${100/gridSize}%`
     
-// }
+}
 
 const button = document.querySelector(".button")
 button.addEventListener ("click", () => {

@@ -13,19 +13,26 @@ drawGrid = function(gridSize){
     }
 }
  
-// colourChange = function() {
+colourChange = function() {
 
-// const grid = document.querySelectorAll(".grid")
-//     grid.forEach((square) => {
-//         square.addEventListener("mouseover", () => {
-//             square.classList.add("change")
-//             const change = document.querySelectorAll(".change")
-//             change.forEach((initialSquare) => {
-//                 initialSquare.setAttribute("style", "background:black;")
-//             })
-//         });
-//     });
-// }
+const grid = document.querySelectorAll(".grid")
+    grid.forEach((square) => {
+        square.addEventListener("mouseover", () => {
+            square.classList.add("change")
+            const change = document.querySelectorAll(".change")
+            change.forEach((initialSquare) => {
+                initialSquare.setAttribute("style", "background:black;")
+            })
+        });
+    });
+}
+
+randomColour = function(){
+    let a = Math.floor(Math.random() * 256)
+    let b = Math.floor(Math.random() * 256)
+    let c = Math.floor(Math.random() * 256)
+    randomColour = `rgb(${a},${b},${c})`
+}
 
 rainbowColourChange = function(){
     const grid = document.querySelectorAll(".grid")
@@ -41,12 +48,6 @@ rainbowColourChange = function(){
     });
 }
 
-randomColour = function(){
-    let a = Math.floor(Math.random() * 256)
-    let b = Math.floor(Math.random() * 256)
-    let c = Math.floor(Math.random() * 256)
-    randomColour = `rgb(${a},${b},${c})`
-}
 
 
 removeGrid = function(){
@@ -84,11 +85,16 @@ button.addEventListener ("click", () => {
 
 const standard = document.querySelector(".standard")
 standard.addEventListener ("click", () => {
-    alert("Standard")
+    mode = "standard"
 })
 
 const psychedelic = document.querySelector(".psychedelic")
 psychedelic.addEventListener("click", () =>{
-    alert("Psychedelic")
+    mode = "psychedelic"
+})
+
+if (mode == "standard") {
+    colourChange()
+} else {
+    mode == "psychedelic"
 }
-)
